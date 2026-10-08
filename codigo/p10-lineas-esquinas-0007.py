@@ -1,3 +1,6 @@
+# Alexandro Aguilar NC = 0007
+# EJEMPLO 2 Detección de esquinas con Harris + experimentar
+
 import cv2
 import numpy as np
 
@@ -33,7 +36,7 @@ esquinas = cv2.dilate(
 resultado = imagen.copy()
 
 # Umbral para identificar esquinas
-umbral = 0.05 * esquinas.max()
+umbral = 0.01 * esquinas.max()
 
 # Marcar esquinas
 resultado[esquinas > umbral] = [0, 0, 255]
@@ -45,13 +48,13 @@ cv2.imshow(
 )
 
 cv2.imshow(
-    "Esquinas detectadas",
+    "Esquinas detectadas 0007",
     resultado
 )
 
 # Guardar resultado
 cv2.imwrite(
-    "resultados/ejemplo2_esquinas.jpg",
+    "resultados/ejemplo3_esquinas.jpg",
     resultado
 )
 
@@ -65,10 +68,12 @@ print("Cantidad aproximada de puntos detectados:",
       cantidad_esquinas)
 
 print("Resultado guardado en:")
-print("resultados/ejemplo2_esquinas.jpg")
+print("resultados/ejemplo3_esquinas.jpg")
 
 # Esperar una tecla
 cv2.waitKey(0)
 
 # Cerrar ventanas
 cv2.destroyAllWindows()
+
+print("Programa realizado por Alexandro Aguilar NC = 0007")
